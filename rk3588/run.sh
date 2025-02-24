@@ -11,5 +11,5 @@ docker run -it --rm \
   -w "${CONTAINER_SDK_PATH}" \
   -e USER_ID=$(id -u) \
   -e GROUP_ID=$(id -g) \
-  rk-builder:18.04 \
+  wqhot/rk-builder:18.04 \
   /bin/zsh
