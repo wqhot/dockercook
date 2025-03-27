@@ -16,6 +16,8 @@ RUN apt-get install -y language-pack-zh-hans && \
     locale-gen zh_CN.UTF-8 && \
     update-locale LANG=zh_CN.UTF-8
 
+RUN apt install -y bc time rsync
+
 RUN apt-get install -y zsh openssh-server vim curl && \
     apt-get clean all
 
