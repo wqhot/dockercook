@@ -54,6 +54,8 @@ RUN if getent group ${GID} > /dev/null 2>&1; then \
 
 
 RUN dnf install -y libgudev-devel
+
+RUN dnf install -y expat expat-devel libunwind libunwind-devel
 # 切换到构建用户
 USER ${USER_NAME}
 WORKDIR /home/${USER_NAME}
