@@ -4,7 +4,7 @@ PWD=$(pwd)
 
 # 启动容器并进入 Zsh
 docker run -it --rm \
-  --platform linux/amd64 \
+  --platform linux/arm64 \
   -v "${PWD}:/home/builduser/mesa" \
   -w "/home/builduser/mesa" \
   -e USER_ID=$(id -u) \

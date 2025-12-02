@@ -1,4 +1,4 @@
-FROM hub.oepkgs.net/openeuler/openeuler:22.03-lts
+FROM hub.oepkgs.net/openeuler/openeuler:22.03-lts-sp4
 
 # 安装依赖项
 RUN yum makecache
