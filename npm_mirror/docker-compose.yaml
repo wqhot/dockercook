@@ -1,0 +1,15 @@
+services:
+  npm-mirror:
+    build: .
+    container_name: npm-mirror
+    user: root
+    ports:
+      - "4873:4873"
+    volumes:
+      - ./storage:/verdaccio/storage
+      - ./conf:/verdaccio/conf
+      - ./plugins:/verdaccio/plugins
+    command: ["verdaccio", "--config", "/verdaccio/conf/config.yaml"]
+    environment:
+      - VERDACCIO_PORT=4873
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  oe2203sp4-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oe2203sp4-test
+    hostname: oe2203sp4-test
+
+    # 添加宿主机映射（使用host.docker.internal）
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    # 挂载测试脚本
+    volumes:
+      - ./test-offline-install.sh:/root/test-offline-install.sh:ro
+
+    # 使用bridge网络（默认）
+    # 容器可以访问宿主机，但默认可以访问外网
+    # 需要手动禁用外网访问
+
+    # 交互模式
+    stdin_open: true
+    tty: true
+
+    # 工作目录
+    working_dir: /root
+
+networks:
+  default:
+    driver: bridge
